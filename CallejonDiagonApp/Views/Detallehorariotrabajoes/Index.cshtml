@@ -1,0 +1,67 @@
+﻿@model IEnumerable<CallejonDiagonApp.Models.Detallehorariotrabajo>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraEntada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraSalida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadHoras)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdHorarioTrabajoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraEntada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraSalida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadHoras)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdHorarioTrabajoNavigation.IdHorarioTrabajo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdDetalleHorarioT">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdDetalleHorarioT">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdDetalleHorarioT">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

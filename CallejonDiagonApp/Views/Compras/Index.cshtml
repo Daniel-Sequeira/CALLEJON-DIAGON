@@ -1,0 +1,91 @@
+﻿@model IEnumerable<CallejonDiagonApp.Models.Compra>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubtotalCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Iva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImporteTotalCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompraStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEmpleadoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMetodoPagoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProveedoresIdProveedorNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubtotalCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImporteTotalCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompraStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEmpleadoNavigation.IdEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdMetodoPagoNavigation.IdMetodoPago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProveedoresIdProveedorNavigation.IdProveedor)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

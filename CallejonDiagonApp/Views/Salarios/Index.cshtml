@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CallejonDiagonApp.Models.Salario>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SalarioBase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorHora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorHoraExtra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEmpleadoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalarioBase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorHora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorHoraExtra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEmpleadoNavigation.IdEmpleado)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdSalario">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdSalario">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdSalario">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

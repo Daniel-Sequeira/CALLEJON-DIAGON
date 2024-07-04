@@ -1,0 +1,62 @@
+﻿@model CallejonDiagonApp.Models.Comprasdetalle
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>Comprasdetalle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdCompraDetalle" />
+            <div class="form-group">
+                <label asp-for="IdCompra" class="control-label"></label>
+                <input asp-for="IdCompra" class="form-control" />
+                <span asp-validation-for="IdCompra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdProducto" class="control-label"></label>
+                <input asp-for="IdProducto" class="form-control" />
+                <span asp-validation-for="IdProducto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecioCostoUnitario" class="control-label"></label>
+                <input asp-for="PrecioCostoUnitario" class="form-control" />
+                <span asp-validation-for="PrecioCostoUnitario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cantidad" class="control-label"></label>
+                <input asp-for="Cantidad" class="form-control" />
+                <span asp-validation-for="Cantidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImporteTotalCompra" class="control-label"></label>
+                <input asp-for="ImporteTotalCompra" class="form-control" />
+                <span asp-validation-for="ImporteTotalCompra" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="ComprasIdCompra" />
+            <input type="hidden" asp-for="ComprasProveedoresIdProveedor" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

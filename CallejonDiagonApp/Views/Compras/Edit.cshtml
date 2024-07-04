@@ -1,0 +1,76 @@
+﻿@model CallejonDiagonApp.Models.Compra
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>Compra</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdCompra" />
+            <div class="form-group">
+                <label asp-for="IdProveedor" class="control-label"></label>
+                <input asp-for="IdProveedor" class="form-control" />
+                <span asp-validation-for="IdProveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaCompra" class="control-label"></label>
+                <input asp-for="FechaCompra" class="form-control" />
+                <span asp-validation-for="FechaCompra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubtotalCompra" class="control-label"></label>
+                <input asp-for="SubtotalCompra" class="form-control" />
+                <span asp-validation-for="SubtotalCompra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Iva" class="control-label"></label>
+                <input asp-for="Iva" class="form-control" />
+                <span asp-validation-for="Iva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImporteTotalCompra" class="control-label"></label>
+                <input asp-for="ImporteTotalCompra" class="form-control" />
+                <span asp-validation-for="ImporteTotalCompra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEmpleado" class="control-label"></label>
+                <select asp-for="IdEmpleado" class="form-control" asp-items="ViewBag.IdEmpleado"></select>
+                <span asp-validation-for="IdEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompraStatus" class="control-label"></label>
+                <input asp-for="CompraStatus" class="form-control" />
+                <span asp-validation-for="CompraStatus" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="ProveedoresIdProveedor" />
+            <div class="form-group">
+                <label asp-for="IdMetodoPago" class="control-label"></label>
+                <select asp-for="IdMetodoPago" class="form-control" asp-items="ViewBag.IdMetodoPago"></select>
+                <span asp-validation-for="IdMetodoPago" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

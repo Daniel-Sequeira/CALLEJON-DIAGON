@@ -1,0 +1,91 @@
+﻿@model IEnumerable<CallejonDiagonApp.Models.Venta>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaVenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubttotalVenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Iva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImporteTotalVenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VentaStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClientesIdClienteNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEmpleadoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdMetodoPagoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaVenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubttotalVenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Iva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImporteTotalVenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VentaStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientesIdClienteNavigation.IdCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEmpleadoNavigation.IdEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdMetodoPagoNavigation.IdMetodoPago)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdVenta">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdVenta">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdVenta">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

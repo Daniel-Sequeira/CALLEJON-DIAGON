@@ -1,0 +1,67 @@
+﻿@model IEnumerable<CallejonDiagonApp.Models.Proveedore>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CedulaProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonoProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProveedorStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CedulaProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefonoProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProveedorStatus)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdProveedor">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdProveedor">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdProveedor">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿@model CallejonDiagonApp.Models.Proveedore
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<h4>Proveedore</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CedulaProveedor" class="control-label"></label>
+                <input asp-for="CedulaProveedor" class="form-control" />
+                <span asp-validation-for="CedulaProveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreProveedor" class="control-label"></label>
+                <input asp-for="NombreProveedor" class="form-control" />
+                <span asp-validation-for="NombreProveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefonoProveedor" class="control-label"></label>
+                <input asp-for="TelefonoProveedor" class="form-control" />
+                <span asp-validation-for="TelefonoProveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailProveedor" class="control-label"></label>
+                <input asp-for="EmailProveedor" class="form-control" />
+                <span asp-validation-for="EmailProveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

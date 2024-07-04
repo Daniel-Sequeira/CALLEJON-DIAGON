@@ -1,0 +1,88 @@
+﻿@model CallejonDiagonApp.Models.Ventasdetalle
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<h4>Ventasdetalle</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdVentaDetalle" class="control-label"></label>
+                <input asp-for="IdVentaDetalle" class="form-control" />
+                <span asp-validation-for="IdVentaDetalle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdVenta" class="control-label"></label>
+                <input asp-for="IdVenta" class="form-control" />
+                <span asp-validation-for="IdVenta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdProducto" class="control-label"></label>
+                <input asp-for="IdProducto" class="form-control" />
+                <span asp-validation-for="IdProducto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecioVentaUnitario" class="control-label"></label>
+                <input asp-for="PrecioVentaUnitario" class="form-control" />
+                <span asp-validation-for="PrecioVentaUnitario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cantidad" class="control-label"></label>
+                <input asp-for="Cantidad" class="form-control" />
+                <span asp-validation-for="Cantidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImporteTotalVenta" class="control-label"></label>
+                <input asp-for="ImporteTotalVenta" class="form-control" />
+                <span asp-validation-for="ImporteTotalVenta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VentasIdVenta" class="control-label"></label>
+                <select asp-for="VentasIdVenta" class ="form-control" asp-items="ViewBag.VentasIdVenta"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="VentasClientesIdCliente" class="control-label"></label>
+                <input asp-for="VentasClientesIdCliente" class="form-control" />
+                <span asp-validation-for="VentasClientesIdCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductosIdProducto" class="control-label"></label>
+                <input asp-for="ProductosIdProducto" class="form-control" />
+                <span asp-validation-for="ProductosIdProducto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductosUnidadesMedidasIdUnidadMedida" class="control-label"></label>
+                <input asp-for="ProductosUnidadesMedidasIdUnidadMedida" class="form-control" />
+                <span asp-validation-for="ProductosUnidadesMedidasIdUnidadMedida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductosProveedoresIdProveedor" class="control-label"></label>
+                <input asp-for="ProductosProveedoresIdProveedor" class="form-control" />
+                <span asp-validation-for="ProductosProveedoresIdProveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

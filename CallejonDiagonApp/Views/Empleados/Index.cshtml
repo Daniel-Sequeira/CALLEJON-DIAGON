@@ -1,0 +1,121 @@
+﻿@model IEnumerable<CallejonDiagonApp.Models.Empleado>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CedulaEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidosEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonoEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DireccionEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoginUs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PasswordEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaAlta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaBaja)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpleadoStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAreaNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdRolNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CedulaEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidosEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefonoEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DireccionEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoginUs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PasswordEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaAlta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaBaja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpleadoStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAreaNavigation.IdArea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdRolNavigation.IdRol)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdEmpleado">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdEmpleado">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdEmpleado">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

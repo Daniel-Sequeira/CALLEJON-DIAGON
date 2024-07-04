@@ -1,0 +1,67 @@
+﻿@model CallejonDiagonApp.Models.Venta
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<h4>Venta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdCliente" class="control-label"></label>
+                <input asp-for="IdCliente" class="form-control" />
+                <span asp-validation-for="IdCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdMetodoPago" class="control-label"></label>
+                <select asp-for="IdMetodoPago" class ="form-control" asp-items="ViewBag.IdMetodoPago"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaVenta" class="control-label"></label>
+                <input asp-for="FechaVenta" class="form-control" />
+                <span asp-validation-for="FechaVenta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubttotalVenta" class="control-label"></label>
+                <input asp-for="SubttotalVenta" class="form-control" />
+                <span asp-validation-for="SubttotalVenta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Iva" class="control-label"></label>
+                <input asp-for="Iva" class="form-control" />
+                <span asp-validation-for="Iva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImporteTotalVenta" class="control-label"></label>
+                <input asp-for="ImporteTotalVenta" class="form-control" />
+                <span asp-validation-for="ImporteTotalVenta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEmpleado" class="control-label"></label>
+                <select asp-for="IdEmpleado" class ="form-control" asp-items="ViewBag.IdEmpleado"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

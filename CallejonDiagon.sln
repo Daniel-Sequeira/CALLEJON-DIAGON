@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallejonDiagonApp", "CallejonDiagonApp\CallejonDiagonApp.csproj", "{3670C5B9-AADE-4DE5-8CE1-857BC655391F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3670C5B9-AADE-4DE5-8CE1-857BC655391F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3670C5B9-AADE-4DE5-8CE1-857BC655391F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3670C5B9-AADE-4DE5-8CE1-857BC655391F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3670C5B9-AADE-4DE5-8CE1-857BC655391F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0255C742-8F68-4F6C-8DED-ABA87048D6D0}
+	EndGlobalSection
+EndGlobal
